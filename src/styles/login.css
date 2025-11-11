@@ -1,0 +1,124 @@
+/* ---------- ROOT COLORS ---------- */
+:root {
+  --bg: #0f172a; /* Updated for the dark background color */
+  --card: #ffffff;
+  --text: #0b1324;
+  --muted: #64748b;
+  --primary: #6d28d9;
+  --primary2: #f97316;
+}
+
+/* ---------- PAGE LAYOUT ---------- */
+.login-page {
+  height: 100vh;
+  width: 100%;
+  /* Change the display to flex to center content against the dark background */
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--bg); /* Use the dark background color */
+}
+
+/* ---------- LEFT PANEL ---------- */
+.login-left {
+  /* Set a fixed max-width for the left content block, as seen in the image */
+  max-width: 500px;
+  /* Remove background and set colors for the text block within the dark page */
+  background: linear-gradient(135deg, #6d28d9, #f97316); 
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+  border-radius: 10px; /* Added border-radius to match the image style */
+  /* Remove this if you only want the text to have the gradient background */
+}
+
+.login-left h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.login-left p {
+  font-size: 18px;
+  max-width: 420px;
+  line-height: 1.5;
+}
+
+/* ---------- RIGHT PANEL ---------- */
+.login-right {
+  /* This now acts as the white card with the form */
+  background: #ffffff; 
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  padding: 40px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Added shadow */
+  border-radius: 10px; /* Match the left panel's radius */
+  margin-left: -50px; /* Pull the card slightly over the left panel for the layered effect */
+}
+
+/* ---------- LOGIN CARD (Inner structure of login-right) ---------- */
+.login-card {
+  width: 100%;
+  max-width: 340px; /* Reduced max-width for a more compact card look */
+}
+
+.login-title {
+  text-align: center;
+  margin-bottom: 24px; /* Increased margin */
+  font-size: 24px; /* Slightly smaller */
+  font-weight: 700; /* Bolder font weight */
+  color: var(--text);
+}
+
+/* ---------- INPUTS ---------- */
+.form-label {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 8px; /* Increased margin */
+  display: block; /* Ensures the label takes its own line */
+}
+
+.form-input {
+  width: 100%;
+  height: 48px; /* Slightly taller input */
+  padding: 0 16px; /* Increased padding */
+  border-radius: 8px; /* Slightly smaller radius for a modern look */
+  border: 1px solid #d1d5db;
+  margin-bottom: 16px; /* Increased margin */
+}
+
+.form-input:focus {
+  border-color: #6d28d9;
+  outline: none;
+  box-shadow: 0 0 0 1px #6d28d9; /* Added a subtle focus ring */
+}
+
+/* ---------- LOGIN BUTTON ---------- */
+.login-btn {
+  width: 100%;
+  height: 48px; /* Taller button */
+  border-radius: 8px; /* Smaller radius */
+  border: none;
+  color: white;
+  /* Use the gradient for the button */
+  background: linear-gradient(90deg, #6d28d9, #f97316); 
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: opacity 0.3s;
+}
+
+.login-btn:hover {
+    opacity: 0.9;
+}
+
+/* ---------- ERROR TEXT ---------- */
+.error-text {
+  color: #dc2626;
+  margin-top: 10px;
+  text-align: center;
+}

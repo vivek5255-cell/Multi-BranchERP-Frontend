@@ -1,0 +1,47 @@
+/* src/styles/global.css */
+
+/* ====== RESET / BASE STYLES ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f8fafc;
+  color: #0f172a;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* ====== GLOBAL ELEMENTS ====== */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+/* ====== SCROLLBAR (optional, looks modern) ====== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #94a3b8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #64748b;
+}
