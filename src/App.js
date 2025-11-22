@@ -260,8 +260,12 @@ function App() {
   /* ✅ Check login status on page load */
   useEffect(() => {
     const token = localStorage.getItem("token");
-    if (token) {
+
+    // Only allow login if token is exactly correct
+    if (token === "dummy-token") {
       setUser({ name: "Owner" });
+    } else {
+      localStorage.removeItem("token"); // Remove bad token
     }
   }, []);
 
@@ -289,38 +293,28 @@ function App() {
     setTimeout(() => setShowAlert({ visible: false }), 2000);
   };
 
-  /* ✅ Page router (manual routing) */
+  /* ✅ Page router */
   const renderPage = () => {
     switch (currentPage) {
-      case "dashboard":
-        return <Dashboard />;
-      case "products":
-        return <Products />;
-      case "vendors":
-        return <Vendors />;
-      case "branches":
-        return <Branches />;
-      case "purchase":
-        return <PurchaseOrder />;
-      case "grn":
-        return <GRN />;
-      case "invoice":
-        return <Invoice />;
-      case "transfer":
-        return <StockTransfer />;
-      case "reports":
-        return <Reports />;
-      default:
-        return <Dashboard />;
+      case "dashboard": return <Dashboard />;
+      case "products": return <Products />;
+      case "vendors": return <Vendors />;
+      case "branches": return <Branches />;
+      case "purchase": return <PurchaseOrder />;
+      case "grn": return <GRN />;
+      case "invoice": return <Invoice />;
+      case "transfer": return <StockTransfer />;
+      case "reports": return <Reports />;
+      default: return <Dashboard />;
     }
   };
 
-  /* ✅ If NOT logged in → only show the login screen */
+  /* ⛔ If NOT logged in → only show login page */
   if (!user) {
     return <Login onLogin={handleLogin} />;
   }
 
-  /* ✅ If logged in → show full ERP layout */
+  /* ✅ If logged in → show full ERP */
   return (
     <div className="app-shell">
       <Navbar
@@ -354,4 +348,5 @@ function App() {
 }
 
 export default App;
+
 
